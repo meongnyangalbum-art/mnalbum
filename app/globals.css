@@ -1,0 +1,45 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "../vendor/shadcn-tailwind-4.13.0.css";
+
+@theme inline {
+  --color-cream: #fff9f1;
+  --color-coral: #f47e66;
+  --color-peach: #f6a07d;
+  --color-cocoa: #4a2e1c;
+  --color-beige: #f3e7d8;
+  --color-sage: #a7c5ab;
+  --shadow-soft: 0 8px 28px rgba(91, 57, 35, .09);
+}
+
+:root { color-scheme: light; }
+* { box-sizing: border-box; }
+html, body { min-height: 100%; }
+body {
+  margin: 0;
+  color: #4a2e1c;
+  background: #f8f2ea;
+  font-family: Arial, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+}
+button, input, textarea, select { font: inherit; }
+button { -webkit-tap-highlight-color: transparent; cursor: pointer; }
+.app-shell {
+  width: min(100%, 480px);
+  min-height: 100dvh;
+  margin: 0 auto;
+  background: #fffaf4;
+  position: relative;
+  box-shadow: 0 0 40px rgba(74, 46, 28, .08);
+}
+.safe-bottom { padding-bottom: calc(92px + env(safe-area-inset-bottom)); }
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.brand-mark { position: relative; overflow: hidden; flex: 0 0 auto; }
+.brand-mark img { position: absolute; max-width: none; }
+.brand-mark--icon { width: 48px; height: 48px; }
+.brand-mark--icon img { width: 189px; left: -34px; top: -21px; }
+.brand-lockup { width: 275px; height: 104px; position: relative; overflow: hidden; }
+.brand-lockup img { position: absolute; width: 394px; max-width: none; left: -63px; top: -42px; }
+@keyframes floaty { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-8px) } }
+@keyframes pulseSoft { 0%,100% { opacity:.45; transform:scale(.92) } 50% { opacity:1; transform:scale(1.05) } }
+.animate-floaty { animation: floaty 2.4s ease-in-out infinite; }
+.animate-pulse-soft { animation: pulseSoft 1.5s ease-in-out infinite; }
